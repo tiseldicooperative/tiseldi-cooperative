@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1740,16 +1740,14 @@ const TRANSLATIONS = {
 
     const RTL_LANGS = ["ar"];
     const STORAGE_KEY = null; // no persistent storage; language resets to default on reload
-    let currentLang = "en";
+    let currentLang = "fr";
 
     function detectInitialLang(){
-      const supported = Object.keys(TRANSLATIONS);
-      const nav = (navigator.language || navigator.userLanguage || "en").slice(0,2).toLowerCase();
-      return supported.includes(nav) ? nav : "en";
+      return "fr";
     }
 
     function applyLanguage(lang){
-      if (!TRANSLATIONS[lang]) lang = "en";
+      if (!TRANSLATIONS[lang]) lang = "fr";
       currentLang = lang;
       const dict = TRANSLATIONS[lang];
       const isRtl = RTL_LANGS.includes(lang);
