@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.title">Tiseldi — Traditional Weaving Cooperative, Ouarzazate</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta.description" content="Tiseldi weaves light from Ouarzazate: lamps, mirrors, furniture and parasols in natural fibers, handcrafted by the cooperative's artisans.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0c1420;
+    --navy:#131f30;
+    --navy-soft:#1c2c40;
+    --umber:#241708;
+    --amber:#e2951f;
+    --amber-bright:#f4b23a;
+    --straw:#c9a35f;
+    --cream:#f4ecdb;
+    --cream-dim:#c9c0ac;
+    --line:rgba(244,236,219,0.14);
+    --sage:#8a9068;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--navy-deep);
+    color:var(--cream);
+    font-family:'Karla',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+  }
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-0.01em;}
+  .container{max-width:1180px;margin:0 auto;padding:0 28px;}
+  ::selection{background:var(--amber);color:var(--navy-deep);}
+  :focus-visible{outline:2px solid var(--amber-bright);outline-offset:3px;}
+
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--amber-bright);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--amber-bright);display:inline-block;}
+
+  /* ---------- weave signature motif ---------- */
+  .weave-rule{
+    width:100%;
+    height:14px;
+    background-image: repeating-linear-gradient(115deg, transparent 0 6px, rgba(226,149,31,0.55) 6px 7px, transparent 7px 18px),
+                       repeating-linear-gradient(65deg, transparent 0 6px, rgba(201,163,95,0.35) 6px 7px, transparent 7px 18px);
+    opacity:.6;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 28px;
+    background:linear-gradient(to bottom, rgba(12,20,32,.92), rgba(12,20,32,0));
+    backdrop-filter:blur(2px);
+    transition:background .3s ease, padding .3s ease, box-shadow .3s ease;
+  }
+  header.scrolled{
+    background:rgba(12,20,32,.92);
+    padding:12px 28px;
+    box-shadow:0 1px 0 var(--line);
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--line);}
+  .brand-name{font-family:'Fraunces',serif;font-size:1.15rem;letter-spacing:.02em;}
+  .brand-name span{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber-bright);}
+  nav{display:flex;align-items:center;gap:32px;}
+  nav a{font-size:.82rem;letter-spacing:.03em;color:var(--cream-dim);transition:color .2s ease;position:relative;}
+  nav a:hover{color:var(--cream);}
+  .nav-links{display:flex;gap:32px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+    padding:12px 20px;
+    border:1px solid var(--amber);
+    color:var(--cream);
+    transition:all .25s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{background:var(--amber);color:var(--navy-deep);}
+  .btn-solid{background:var(--amber);color:var(--navy-deep);border-color:var(--amber);}
+  .btn-solid:hover{background:var(--amber-bright);border-color:var(--amber-bright);}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--cream);width:42px;height:42px;align-items:center;justify-content:center;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;min-height:100svh;
+    display:flex;align-items:flex-end;
+    background:#000;
+  }
+  .hero-media{position:absolute;inset:0;overflow:hidden;}
+  .hero-media img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:heroZoom 18s ease-out forwards;}
+  @keyframes heroZoom{to{transform:scale(1);}}
+  .hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(12,20,32,.55) 0%, rgba(12,20,32,.15) 32%, rgba(12,20,32,.35) 62%, rgba(9,14,22,.96) 100%);
+  }
+  .hero-inner{position:relative;z-index:2;width:100%;padding:0 28px 84px;}
+  .hero-content{max-width:1180px;margin:0 auto;}
+  .hero h1{
+    font-size:clamp(2.6rem, 6.2vw, 5.2rem);
+    line-height:1.02;
+    max-width:14ch;
+    color:var(--cream);
+  }
+  .hero h1 em{font-style:italic;color:var(--amber-bright);font-weight:400;}
+  .hero-sub{
+    margin-top:22px;max-width:38ch;
+    font-size:1.05rem;color:var(--cream-dim);
+  }
+  .hero-cta{margin-top:38px;display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-scroll{
+    position:absolute;bottom:26px;right:28px;z-index:2;
+    display:flex;align-items:center;gap:10px;
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--cream-dim);
+  }
+  .hero-scroll .line{width:1px;height:34px;background:var(--cream-dim);position:relative;overflow:hidden;}
+  .hero-scroll .line::after{content:"";position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--amber-bright);animation:scrollLine 2.2s ease-in-out infinite;}
+  @keyframes scrollLine{50%{top:0;}100%{top:100%;}}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+
+  /* ---------- section shells ---------- */
+  section{padding:120px 0;position:relative;}
+  .section-tight{padding:80px 0;}
+
+  /* ---------- story ---------- */
+  .story{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+  .story-media{position:relative;aspect-ratio:4/5;overflow:hidden;}
+  .story-media img{width:100%;height:100%;object-fit:cover;}
+  .story-media .frame{
+    position:absolute;inset:18px;border:1px solid rgba(244,236,219,.35);
+    pointer-events:none;
+  }
+  .story h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.2;margin-bottom:28px;}
+  .story h2 em{font-style:italic;color:var(--amber-bright);}
+  .story p{color:var(--cream-dim);margin-bottom:18px;max-width:46ch;font-size:1rem;}
+  .stat-row{display:flex;gap:40px;margin-top:36px;padding-top:32px;border-top:1px solid var(--line);}
+  .stat b{font-family:'Fraunces',serif;font-size:2rem;display:block;color:var(--amber-bright);}
+  .stat span{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);}
+
+  /* ---------- craft process ---------- */
+  .craft{background:var(--navy);position:relative;}
+  .craft-head{max-width:640px;margin:0 auto 64px;text-align:center;}
+  .craft-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-top:18px;}
+  .craft-head h2 em{font-style:italic;color:var(--amber-bright);}
+  .craft-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .craft-step{background:var(--navy);padding:38px 28px;}
+  .craft-step .num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.1em;}
+  .craft-step h3{font-size:1.15rem;margin:18px 0 10px;font-weight:500;}
+  .craft-step p{color:var(--cream-dim);font-size:.92rem;}
+
+  /* ---------- collection ---------- */
+  .collection-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:28px;margin-bottom:52px;}
+  .collection-head h2{font-size:clamp(1.9rem,3.6vw,2.8rem);max-width:14ch;}
+  .collection-head h2 em{font-style:italic;color:var(--amber-bright);}
+  .filters{display:flex;gap:10px;flex-wrap:wrap;}
+  .filter-btn{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    padding:10px 16px;border:1px solid var(--line);color:var(--cream-dim);
+    background:transparent;cursor:pointer;transition:all .2s ease;
+  }
+  .filter-btn:hover{border-color:var(--amber);color:var(--cream);}
+  .filter-btn.active{background:var(--amber);border-color:var(--amber);color:var(--navy-deep);}
+
+  .grid-products{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);}
+  .product-card{background:var(--navy-deep);position:relative;overflow:hidden;transition:opacity .35s ease, transform .35s ease;}
+  .product-card.hidden{display:none;}
+  .product-media{aspect-ratio:4/5;overflow:hidden;position:relative;}
+  .product-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .product-card:hover .product-media img{transform:scale(1.06);}
+  .product-tag{
+    position:absolute;top:14px;left:14px;
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+    background:rgba(12,20,32,.75);color:var(--amber-bright);padding:6px 10px;border:1px solid rgba(226,149,31,.4);
+  }
+  .product-info{padding:22px;}
+  .product-info h3{font-size:1.2rem;font-weight:500;margin-bottom:6px;}
+  .product-info p{color:var(--cream-dim);font-size:.86rem;margin-bottom:14px;}
+  .product-price{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--straw);
+    padding-top:14px;border-top:1px solid var(--line);
+  }
+  .product-price a{color:var(--amber-bright);}
+  .product-price a:hover{text-decoration:underline;}
+
+  /* ---------- quote ---------- */
+  .quote-section{
+    padding:130px 0;text-align:center;position:relative;
+    background:linear-gradient(180deg, var(--navy-deep), var(--umber) 140%);
+  }
+  .quote-section blockquote{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+    font-size:clamp(1.5rem,3.4vw,2.5rem);
+    max-width:20ch;margin:0 auto;line-height:1.4;color:var(--cream);
+  }
+  .quote-section blockquote em{color:var(--amber-bright);font-style:italic;}
+  .quote-section cite{
+    display:block;margin-top:28px;font-style:normal;
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);
+  }
+
+  /* ---------- contact ---------- */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+  .contact h2{font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.15;margin-bottom:18px;}
+  .contact h2 em{font-style:italic;color:var(--amber-bright);}
+  .contact > div:first-child p{color:var(--cream-dim);max-width:42ch;margin-bottom:36px;}
+  .contact-methods{display:flex;flex-direction:column;gap:22px;border-top:1px solid var(--line);padding-top:28px;}
+  .contact-method{display:flex;align-items:center;gap:16px;}
+  .contact-icon{
+    width:46px;height:46px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--amber);color:var(--amber-bright);
+  }
+  .contact-icon.solid{background:var(--sage);border-color:var(--sage);color:var(--navy-deep);}
+  .contact-method .label{font-size:.9rem;color:var(--cream);}
+  .contact-method .value{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--cream-dim);margin-top:2px;}
+
+  .form-panel{border:1px solid var(--line);background:rgba(28,44,64,.4);padding:40px;}
+  .field{display:flex;flex-direction:column;gap:8px;margin-bottom:26px;}
+  .field label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);}
+  .field input, .field textarea, .field select{
+    background:transparent;border:none;border-bottom:1px solid rgba(244,236,219,.3);
+    color:var(--cream);padding:10px 0;font-family:'Karla',sans-serif;font-size:.95rem;
+  }
+  .field input::placeholder, .field textarea::placeholder{color:rgba(201,192,172,.5);}
+  .field input:focus, .field textarea:focus, .field select:focus{outline:none;border-bottom-color:var(--amber);}
+  .field select option{background:var(--navy);}
+  .form-submit{
+    margin-top:8px;width:100%;justify-content:center;
+    background:var(--amber);color:var(--navy-deep);border-color:var(--amber);
+    padding:15px 20px;font-size:.78rem;cursor:pointer;
+  }
+  .form-submit:hover{background:var(--amber-bright);}
+  .form-note{margin-top:14px;font-size:.78rem;color:var(--cream-dim);text-align:center;display:none;}
+  .form-note.show{display:block;}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding:56px 0 34px;background:#080d14;}
+  .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:40px;}
+  .footer-tag{color:var(--cream-dim);font-size:.88rem;margin-top:14px;max-width:32ch;}
+  .footer-links{display:flex;gap:28px;flex-wrap:wrap;}
+  .footer-links a{font-size:.82rem;color:var(--cream-dim);}
+  .footer-links a:hover{color:var(--amber-bright);}
+  .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:24px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5f6a75;}
+
+  /* ---------- floating whatsapp ---------- */
+  .float-wa{
+    position:fixed;bottom:26px;right:26px;z-index:60;
+    width:58px;height:58px;border-radius:50%;
+    background:var(--sage);color:var(--navy-deep);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    animation:floatPulse 3s ease-in-out infinite;
+  }
+  @keyframes floatPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.06);}}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:920px){
+    .nav-links{display:none;}
+    .menu-toggle{display:flex;}
+    .story, .contact{grid-template-columns:1fr;gap:48px;}
+    .craft-grid{grid-template-columns:repeat(2,1fr);}
+    .grid-products{grid-template-columns:repeat(2,1fr);}
+    section{padding:80px 0;}
+  }
+  @media (max-width:560px){
+    .craft-grid{grid-template-columns:1fr;}
+    .grid-products{grid-template-columns:repeat(2,1fr);gap:1px;}
+    .stat-row{gap:24px;flex-wrap:wrap;}
+    .hero-cta{flex-direction:column;align-items:flex-start;}
+    .hero-cta .btn{width:100%;justify-content:center;}
+
+    .collection-head{gap:16px;margin-bottom:28px;}
+    .filters{
+      flex-wrap:nowrap;overflow-x:auto;gap:8px;
+      padding-bottom:6px;margin:0 -20px;padding-inline:20px;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    }
+    .filters::-webkit-scrollbar{display:none;}
+    .filter-btn{flex:0 0 auto;padding:9px 14px;font-size:10px;}
+
+    .product-tag{top:8px;left:8px;padding:4px 8px;font-size:9px;}
+    .product-info{padding:12px;}
+    .product-info h3{font-size:.92rem;margin-bottom:4px;line-height:1.25;}
+    .product-info p{font-size:.72rem;margin-bottom:8px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    .product-price{padding-top:8px;font-size:9px;flex-wrap:wrap;gap:4px;}
+  }
+
+  .mobile-menu{
+    position:fixed;inset:0;z-index:55;background:var(--navy-deep);
+    display:none;flex-direction:column;justify-content:center;align-items:center;gap:28px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-family:'Fraunces',serif;font-size:1.7rem;}
+  .mobile-close{position:absolute;top:22px;right:26px;background:none;border:1px solid var(--line);color:var(--cream);width:42px;height:42px;}
+
+  /* ---------- chat widget ---------- */
+  .chat-toggle{
+    position:fixed;bottom:26px;left:26px;z-index:60;
+    width:60px;height:60px;border-radius:50%;
+    background:var(--navy-soft);
+    border:1.5px solid var(--amber);
+    padding:0;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.45);
+    animation:floatPulse 3s ease-in-out infinite;
+    overflow:visible;
+  }
+  .chat-toggle img{width:100%;height:100%;border-radius:50%;object-fit:cover;}
+  .chat-toggle .ping{
+    position:absolute;top:-2px;right:-2px;
+    width:14px;height:14px;border-radius:50%;
+    background:var(--sage);border:2px solid var(--navy-deep);
+  }
+  .chat-toggle .close-x{display:none;font-size:22px;color:var(--cream);}
+  .chat-toggle.open .close-x{display:block;}
+  .chat-toggle.open img,.chat-toggle.open .ping{display:none;}
+
+  .chat-panel{
+    position:fixed;bottom:100px;left:26px;z-index:60;
+    width:min(380px, calc(100vw - 40px));
+    height:min(560px, calc(100vh - 140px));
+    background:var(--navy);
+    border:1px solid var(--line);
+    box-shadow:0 24px 60px rgba(0,0,0,.5);
+    display:flex;flex-direction:column;
+    opacity:0;transform:translateY(16px) scale(.98);
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  .chat-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+
+  .chat-head{
+    display:flex;align-items:center;gap:12px;
+    padding:16px 18px;
+    background:linear-gradient(135deg, var(--navy-soft), var(--navy-deep));
+    border-bottom:1px solid var(--line);
+  }
+  .chat-head img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1px solid var(--line);}
+  .chat-head .name{font-family:'Fraunces',serif;font-size:.98rem;color:var(--cream);}
+  .chat-head .status{
+    font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--sage);display:flex;align-items:center;gap:6px;margin-top:2px;
+  }
+  .chat-head .status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sage);}
+
+  .chat-messages{
+    flex:1;overflow-y:auto;
+    padding:18px;
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .chat-messages::-webkit-scrollbar{width:5px;}
+  .chat-messages::-webkit-scrollbar-thumb{background:var(--line);}
+
+  .chat-row{display:flex;align-items:flex-end;gap:8px;max-width:88%;}
+  .chat-row.bot{align-self:flex-start;}
+  .chat-row.user{align-self:flex-end;flex-direction:row-reverse;}
+  .chat-row img{width:24px;height:24px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid var(--line);}
+  .chat-bubble{
+    padding:10px 14px;font-size:.86rem;line-height:1.55;
+    font-family:'Karla',sans-serif;white-space:pre-wrap;word-break:break-word;
+  }
+  .chat-row.bot .chat-bubble{background:var(--navy-soft);color:var(--cream);border-bottom-left-radius:3px;}
+  .chat-row.user .chat-bubble{background:var(--amber);color:var(--navy-deep);border-bottom-right-radius:3px;}
+  .chat-row.system{align-self:center;max-width:100%;}
+  .chat-row.system .chat-bubble{background:transparent;color:var(--cream-dim);font-size:.76rem;text-align:center;}
+  .chat-row.error .chat-bubble{background:rgba(168,68,47,.18);color:#e8a48f;border:1px solid rgba(168,68,47,.4);}
+
+  .chat-typing{align-self:flex-start;display:flex;gap:4px;padding:10px 14px;}
+  .chat-typing span{width:5px;height:5px;border-radius:50%;background:var(--cream-dim);animation:chatBlink 1.2s infinite;}
+  .chat-typing span:nth-child(2){animation-delay:.15s;}
+  .chat-typing span:nth-child(3){animation-delay:.3s;}
+  @keyframes chatBlink{0%,60%,100%{opacity:.25;}30%{opacity:1;}}
+
+  .chat-input-row{
+    display:flex;align-items:center;gap:8px;
+    padding:12px 14px;border-top:1px solid var(--line);
+    background:var(--navy);
+  }
+  .chat-input-row input{
+    flex:1;background:transparent;border:none;border-bottom:1px solid rgba(244,236,219,.3);
+    color:var(--cream);font-family:'Karla',sans-serif;font-size:.86rem;padding:8px 2px;outline:none;
+  }
+  .chat-input-row input:focus{border-bottom-color:var(--amber);}
+  .chat-input-row input::placeholder{color:rgba(201,192,172,.5);}
+  .chat-input-row button{
+    background:var(--amber);color:var(--navy-deep);border:none;
+    font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:10px 16px;cursor:pointer;flex-shrink:0;
+  }
+  .chat-input-row button:hover:not(:disabled){background:var(--amber-bright);}
+  .chat-input-row button:disabled{opacity:.5;cursor:not-allowed;}
+
+  @media (max-width:560px){
+    .chat-toggle{left:18px;bottom:18px;width:54px;height:54px;}
+    .chat-panel{left:12px;bottom:86px;}
+  }
+
+  /* ---------- language switcher ---------- */
+  .lang-switch{position:relative;}
+  .lang-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:10px 14px;border:1px solid var(--line);color:var(--cream-dim);background:transparent;cursor:pointer;
+    transition:all .2s ease;
+  }
+  .lang-btn:hover{border-color:var(--amber);color:var(--cream);}
+  .lang-btn .chev{font-size:9px;transition:transform .2s ease;}
+  .lang-switch.open .lang-btn .chev{transform:rotate(180deg);}
+  .lang-menu{
+    position:absolute;top:calc(100% + 8px);right:0;
+    min-width:160px;background:var(--navy);border:1px solid var(--line);
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+    opacity:0;transform:translateY(-6px);pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease;
+    z-index:70;
+  }
+  .lang-switch.open .lang-menu{opacity:1;transform:translateY(0);pointer-events:auto;}
+  .lang-menu button{
+    display:flex;align-items:center;justify-content:space-between;width:100%;
+    padding:11px 14px;background:none;border:none;border-bottom:1px solid var(--line);
+    color:var(--cream-dim);font-family:'Karla',sans-serif;font-size:.86rem;text-align:left;cursor:pointer;
+  }
+  .lang-menu button:last-child{border-bottom:none;}
+  .lang-menu button:hover{background:var(--navy-soft);color:var(--cream);}
+  .lang-menu button.active{color:var(--amber-bright);}
+  .lang-menu .code{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cream-dim);}
+  .lang-switch-mobile{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+  .lang-switch-mobile button{
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:9px 14px;border:1px solid var(--line);color:var(--cream-dim);background:transparent;cursor:pointer;
+  }
+  .lang-switch-mobile button.active{background:var(--amber);border-color:var(--amber);color:var(--navy-deep);}
+
+  /* ---------- RTL (Arabic) adjustments ---------- */
+  html[dir="rtl"] body{font-family:'Karla','Noto Sans Arabic',sans-serif;}
+  html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3{font-family:'Fraunces','Noto Sans Arabic',serif;}
+  html[dir="rtl"] .eyebrow::before{margin-inline-end:0;}
+  html[dir="rtl"] .hero h1 em, html[dir="rtl"] .story h2 em, html[dir="rtl"] .craft-head h2 em,
+  html[dir="rtl"] .collection-head h2 em, html[dir="rtl"] .contact h2 em{font-style:normal;}
+  html[dir="rtl"] .quote-section blockquote{font-style:normal;}
+  html[dir="rtl"] .hero-scroll{right:auto;left:28px;}
+  html[dir="rtl"] .float-wa{right:auto;left:26px;}
+  html[dir="rtl"] .chat-toggle{left:auto;right:26px;}
+  html[dir="rtl"] .chat-panel{left:auto;right:26px;}
+  html[dir="rtl"] .lang-menu{right:auto;left:0;}
+  html[dir="rtl"] .lang-menu button{text-align:right;}
+  html[dir="rtl"] .stat-row{padding-inline-start:0;}
+  html[dir="rtl"] .form-panel{text-align:right;}
+  @media (max-width:560px){
+    html[dir="rtl"] .chat-toggle{right:18px;left:auto;}
+    html[dir="rtl"] .chat-panel{right:12px;left:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a href="#top" class="brand">
+    <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/LOGO%20TISELDI.jpeg" alt="Logo Coopérative Tiseldi">
+    <div class="brand-name">Tiseldi<span data-i18n="brand.tagline">Cooperative</span></div>
+  </a>
+  <nav class="nav-links">
+    <a href="#histoire" data-i18n="nav.histoire">Our Story</a>
+    <a href="#savoir-faire" data-i18n="nav.savoirfaire">Our Craft</a>
+    <a href="#collection" data-i18n="nav.collection">Collection</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <div class="lang-switch" id="langSwitch">
+      <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+        <span id="langBtnLabel">EN</span><span class="chev">▾</span>
+      </button>
+      <div class="lang-menu" id="langMenu">
+        <button type="button" data-lang="en"><span>English</span><span class="code">EN</span></button>
+        <button type="button" data-lang="ar"><span>العربية</span><span class="code">AR</span></button>
+        <button type="button" data-lang="fr"><span>Français</span><span class="code">FR</span></button>
+        <button type="button" data-lang="es"><span>Español</span><span class="code">ES</span></button>
+      </div>
+    </div>
+    <a class="btn" href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="header.whatsapp">WhatsApp</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" data-i18n-attr="aria-label" data-i18n="header.menuOpen">☰</button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="menuClose" aria-label="Close menu" data-i18n-attr="aria-label" data-i18n="header.menuClose">✕</button>
+  <a href="#histoire" data-i18n="nav.histoire">Our Story</a>
+  <a href="#savoir-faire" data-i18n="nav.savoirfaire">Our Craft</a>
+  <a href="#collection" data-i18n="nav.collection">Collection</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+  <div class="lang-switch-mobile" id="langSwitchMobile">
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="ar">AR</button>
+    <button type="button" data-lang="fr">FR</button>
+    <button type="button" data-lang="es">ES</button>
+  </div>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-media">
+    <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/100.jpg" alt="Devanture de la Coopérative Tiseldi">
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Tiseldi Cooperative — Ouarzazate, Morocco</p>
+      <h1 data-i18n="hero.h1">Light, <em>woven</em><br>by hand.</h1>
+      <p class="hero-sub" data-i18n="hero.sub">From our workshop in Ouarzazate, our artisans shape lamps, mirrors, furniture and parasols from plant fibers — palm, reed and raffia — following a craft passed down from generation to generation.</p>
+      <div class="hero-cta">
+        <a href="#collection" class="btn btn-solid" data-i18n="hero.cta1">Discover the collection</a>
+        <a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" class="btn" data-i18n="hero.cta2">Order custom-made</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span class="line"></span> <span data-i18n="hero.scroll">Scroll</span></div>
+</section>
+
+<div class="weave-rule"></div>
+
+<section id="histoire">
+  <div class="container story">
+    <div class="story-media reveal">
+      <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/24.jpg" alt="Terrasse marocaine à la tombée du jour, suspensions tressées et mobilier en bois">
+      <div class="frame"></div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="histoire.eyebrow">Our Story</p>
+      <h2 style="margin-top:18px;" data-i18n="histoire.h2">Every fiber starts <em>from the earth</em>,<br>and comes back to live in your home.</h2>
+      <p data-i18n="histoire.p1">The Tiseldi cooperative brings together artisans from the Ouarzazate region around a shared gesture: weaving local plant fibers — palm, reed, raffia — into lasting objects of light and décor.</p>
+      <p data-i18n="histoire.p2">Every piece begins with raw material harvested by hand, sun-dried, then woven using techniques passed from mother to daughter. No factory, no two pieces alike: the weave always keeps the trace of the hand that made it.</p>
+      <div class="stat-row">
+        <div class="stat"><b data-i18n="stat1.value">100%</b><span data-i18n="stat1.label">Handmade</span></div>
+        <div class="stat"><b data-i18n="stat2.value">Ouarzazate</b><span data-i18n="stat2.label">Fiber origin</span></div>
+        <div class="stat"><b data-i18n="stat3.value">Made to order</b><span data-i18n="stat3.label">Dimensions & finishes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="craft" id="savoir-faire">
+  <div class="container">
+    <div class="craft-head reveal">
+      <p class="eyebrow" style="justify-content:center;" data-i18n="savoirfaire.eyebrow">Our Craft</p>
+      <h2 data-i18n="savoirfaire.h2">From raw fiber <em>to finished piece</em></h2>
+    </div>
+    <div class="craft-grid reveal">
+      <div class="craft-step">
+        <span class="num">01</span>
+        <h3 data-i18n="craft1.title">Harvest</h3>
+        <p data-i18n="craft1.desc">Raffia, reed and palm are harvested locally, then sorted fiber by fiber for flexibility and color.</p>
+      </div>
+      <div class="craft-step">
+        <span class="num">02</span>
+        <h3 data-i18n="craft2.title">Drying</h3>
+        <p data-i18n="craft2.desc">The fibers dry in the Ouarzazate sun, which gives them the golden hue characteristic of our pieces.</p>
+      </div>
+      <div class="craft-step">
+        <span class="num">03</span>
+        <h3 data-i18n="craft3.title">Weaving</h3>
+        <p data-i18n="craft3.desc">Every shape — dome, arch, fringe — comes to life in the artisans' hands, with no mold or machine.</p>
+      </div>
+      <div class="craft-step">
+        <span class="num">04</span>
+        <h3 data-i18n="craft4.title">Finishing</h3>
+        <p data-i18n="craft4.desc">Structure, wiring and details are fitted to each piece, then checked one by one before shipping.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="weave-rule"></div>
+
+<section id="collection">
+  <div class="container">
+    <div class="collection-head reveal">
+      <div>
+        <p class="eyebrow" data-i18n="collection.eyebrow">Our Collection</p>
+        <h2 style="margin-top:18px;" data-i18n="collection.h2">Pieces that <em>light up</em><br>and last.</h2>
+      </div>
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
+        <button class="filter-btn" data-filter="eclairage" data-i18n="filter.eclairage">Lighting</button>
+        <button class="filter-btn" data-filter="miroir" data-i18n="filter.miroir">Mirrors</button>
+        <button class="filter-btn" data-filter="mobilier" data-i18n="filter.mobilier">Furniture</button>
+        <button class="filter-btn" data-filter="exterieur" data-i18n="filter.exterieur">Outdoor</button>
+        <button class="filter-btn" data-filter="realisation" data-i18n="filter.realisation">Projects</button>
+      </div>
+    </div>
+
+    <div class="grid-products reveal">
+
+      <div class="product-card" data-cat="exterieur">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.ext">Extérieur</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/1.jpg" alt="Parasol Douar" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p1_title">Parasol Douar</h3>
+          <p data-i18n="p1_desc">Toit en paille naturelle sur pied bois massif, table intégrée — pour jardins et piscines.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="miroir">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.miroir">Miroir</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/2.jpg" alt="Miroir Rondins" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p2_title">Miroir Rondins</h3>
+          <p data-i18n="p2_desc">Cadre composé de rondins de bois naturel assemblés un à un, finition brute et chaleureuse.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="mobilier">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.mobilier">Mobilier</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/3.jpeg" alt="Portant Bohème" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p3_title">Portant Bohème</h3>
+          <p data-i18n="p3_desc">Portant en bois flotté façon tipi, étagère basse intégrée pour chaussures et sacs.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="mobilier">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.mobilier">Mobilier</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/4.jpg" alt="Salon Riad" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p4_title">Salon Riad</h3>
+          <p data-i18n="p4_desc">Table basse en zellige et fauteuils en fer forgé tressés à la corde naturelle.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="mobilier">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.mobilier">Mobilier</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/5.jpg" alt="Salon Piscine" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p5_title">Salon Piscine</h3>
+          <p data-i18n="p5_desc">Quatre fauteuils ronds et table haute en fibre naturelle claire — confort et légèreté.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/6.jpeg" alt="Sphère Ksar" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p6_title">Sphère Ksar</h3>
+          <p data-i18n="p6_desc">Tressage serré, lumière chaude et enveloppante — notre best-seller en terrasse.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/7.jpeg" alt="Applique Frange" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p7_title">Applique Frange</h3>
+          <p data-i18n="p7_desc">Demi-lune tressée à poser au mur, franges libres pour une lumière douce et diffuse.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/8.jpeg" alt="Lampe Racine" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p8_title">Lampe Racine</h3>
+          <p data-i18n="p8_desc">Abat-jour conique en raphia fin sur trépied métal cordé, posé sur socle en tronc de bois.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/9.jpeg" alt="Suspension Fleur" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p9_title">Suspension Fleur</h3>
+          <p data-i18n="p9_desc">Pétales alternant tressage plein et claire-voie, pour un jeu d'ombres délicat au plafond.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/10.jpeg" alt="Suspension Cascade" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p10_title">Suspension Cascade</h3>
+          <p data-i18n="p10_desc">Trois niveaux tressés, jupe de franges longues — silhouette bohème et enveloppante.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/11.jpeg" alt="Trio Losange" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p11_title">Trio Losange</h3>
+          <p data-i18n="p11_desc">Composition de trois abat-jours en fibre fine et pampilles, à poser ou suspendre.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/12.jpeg" alt="Constellation Sphères" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p12_title">Constellation Sphères</h3>
+          <p data-i18n="p12_desc">Plusieurs suspensions rondes à motifs variés, à composer selon vos hauteurs de plafond.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="mobilier">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.mobilier">Mobilier</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/14.jpg" alt="Table Cannelée" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p13_title">Table Cannelée</h3>
+          <p data-i18n="p13_desc">Plateau en rondins de bois clair sur pieds métal noir façon épingle — ligne épurée.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="miroir">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.miroir">Miroir</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/15.jpeg" alt="Trio Rondins" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p14_title">Trio Rondins</h3>
+          <p data-i18n="p14_desc">Trois miroirs ronds, tailles dégradées, même esprit de cadre en rondins de bois.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/16.jpeg" alt="Suspension Ovale" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p15_title">Suspension Ovale</h3>
+          <p data-i18n="p15_desc">Nacelle ovale tressée, silhouette douce pour couloirs et entrées.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/17.jpeg" alt="Trio Conique" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p16_title">Trio Conique</h3>
+          <p data-i18n="p16_desc">Suspensions coniques à claire-voie, lumière tamisée pour un plafond en canisse.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/18.jpeg" alt="Suspension Poire" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p17_title">Suspension Poire</h3>
+          <p data-i18n="p17_desc">Silhouette galbée, ceinture en tronçons de bambou — une pièce au caractère affirmé.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/19.jpeg" alt="Sphère Filet" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p18_title">Sphère Filet</h3>
+          <p data-i18n="p18_desc">Tressage à mailles ajourées sur les côtés, bandes pleines en haut et en bas.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/20.jpeg" alt="Applique Cylindre" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p19_title">Applique Cylindre</h3>
+          <p data-i18n="p19_desc">Applique verticale en raphia, lumière chaude qui s'étire le long du mur.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="mobilier">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.mobilier">Mobilier</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/21.jpg" alt="Table à Manger Ronde" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p20_title">Table à Manger Ronde</h3>
+          <p data-i18n="p20_desc">Table ronde et quatre chaises en rotin, suspension raphia assortie au-dessus.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="realisation">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.realisation">Réalisation</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/22.jpg" alt="Aménagement Restaurant" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p21_title">Aménagement Restaurant</h3>
+          <p data-i18n="p21_desc">Salle habillée de canisse tressée et suspensions rondes — exemple de réalisation complète.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="miroir">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.miroir">Miroir</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/23.jpg" alt="Miroir Niche" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p22_title">Miroir Niche</h3>
+          <p data-i18n="p22_desc">Large cadre frangé en fibres naturelles, niche murale intégrée pour vos objets du quotidien.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="exterieur">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.surmesure">Sur mesure</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/24.jpg" alt="Aménagement Terrasse" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p23_title">Aménagement Terrasse</h3>
+          <p data-i18n="p23_desc">Composition complète — suspensions, assises et tables — pour riads, restaurants et terrasses.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="realisation">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.realisation">Réalisation</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/25.jpeg" alt="Plafond Tressé" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p24_title">Plafond Tressé</h3>
+          <p data-i18n="p24_desc">Structure de toiture en roseaux tissés sur poutres apparentes — notre savoir-faire en architecture.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/26.jpg" alt="Suspension Duvet" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p25_title">Suspension Duvet</h3>
+          <p data-i18n="p25_desc">Dôme tressé et franges tombantes, pour une lumière enveloppante façon nid.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="miroir">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.miroir">Miroir</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/27.jpeg" alt="Trio Moderne" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p26_title">Trio Moderne</h3>
+          <p data-i18n="p26_desc">Trois miroirs aux angles arrondis, tailles dégradées, ligne contemporaine et épurée.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="miroir">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.miroir">Miroir</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/28.jpeg" alt="Trio Cercle" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p27_title">Trio Cercle</h3>
+          <p data-i18n="p27_desc">Trois miroirs ronds à cadre rayonnant, attaches de corde bicolores réparties en croix.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="miroir">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.miroir">Miroir</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/29.jpeg" alt="Trio Carré" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p28_title">Trio Carré</h3>
+          <p data-i18n="p28_desc">Trois cadres carrés aux angles arrondis, emboîtés, attaches de corde alignées.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="miroir">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.miroir">Miroir</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/30.jpeg" alt="Trio Arche" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p29_title">Trio Arche</h3>
+          <p data-i18n="p29_desc">Trois miroirs en arche, tailles dégradées, ligatures de corde bicolores aux jonctions.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/31.jpeg" alt="Suspension Longue Frange" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p30_title">Suspension Longue Frange</h3>
+          <p data-i18n="p30_desc">Franges longues et denses tombant d'un col tressé, sous plafond en bois.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="eclairage">
+        <div class="product-media">
+          <span class="product-tag" data-i18n="tag.eclairage">Éclairage</span>
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/32.jpeg" alt="Suspension Cloche" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="p31_title">Suspension Cloche</h3>
+          <p data-i18n="p31_desc">Silhouette en cloche, base à franges courtes — lumière douce et régulière.</p>
+          <div class="product-price"><span data-i18n="price.onRequest">Prix sur demande</span><a href="https://wa.me/212707776715" target="_blank" rel="noreferrer" data-i18n="cta.order">Commander →</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="container reveal">
+    <blockquote data-i18n="quote.text">"In every woven fiber, <em>there is a hand</em>, a season, and a little of the earth of Ouarzazate."</blockquote>
+    <cite data-i18n="quote.cite">— The artisans of the Tiseldi cooperative</cite>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container contact">
+    <div class="reveal">
+      <p class="eyebrow" data-i18n="contact.eyebrow">Let's weave it together</p>
+      <h2 style="margin-top:18px;" data-i18n="contact.h2">A question about <em>dimensions</em>, a custom order or a delivery?</h2>
+      <p data-i18n="contact.p">Write to us directly — we usually reply the same day.</p>
+      <div class="contact-methods">
+        <a class="contact-method" href="https://wa.me/212707776715" target="_blank" rel="noreferrer">
+          <span class="contact-icon solid">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.1 2.2a9.75 9.75 0 0 0-8.4 14.7L2.2 21.8l5.05-1.47A9.75 9.75 0 1 0 12.1 2.2Zm0 17.8a8 8 0 0 1-4.08-1.12l-.29-.17-3 .87.89-2.92-.19-.3A8.02 8.02 0 1 1 12.1 20Zm4.4-5.98c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.18-1.41-1.32-1.65-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path></svg>
+          </span>
+          <span>
+            <span class="label" data-i18n="contact.whatsappLabel">WhatsApp</span>
+            <span class="value">+212 707 776 715</span>
+          </span>
+        </a>
+        <a class="contact-method" href="mailto:tiseldicooperative@gmail.com">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+          </span>
+          <span>
+            <span class="label" data-i18n="contact.emailLabel">Email</span>
+            <span class="value">tiseldicooperative@gmail.com</span>
+          </span>
+        </a>
+        <div class="contact-method">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </span>
+          <span>
+            <span class="label" data-i18n="contact.atelierLabel">Workshop</span>
+            <span class="value" data-i18n="contact.atelierValue">Ouarzazate, Morocco</span>
+          </span>
+        </div>
+        <a class="contact-method" href="https://www.facebook.com/profile.php?id=61562658065434" target="_blank" rel="noreferrer">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </span>
+          <span>
+            <span class="label">Facebook</span>
+            <span class="value">@tiseldi</span>
+          </span>
+        </a>
+        <a class="contact-method" href="https://www.instagram.com/cooperatve.tiseldi?igsi=MW8xb2xmc2M3b3l2cg==" target="_blank" rel="noreferrer">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </span>
+          <span>
+            <span class="label">Instagram</span>
+            <span class="value">@cooperatve.tiseldi</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <form class="form-panel reveal" id="contactForm">
+      <div class="field">
+        <label for="f-name" data-i18n="form.nameLabel">Full name</label>
+        <input id="f-name" type="text" name="name" required placeholder="Your name" data-i18n-attr="placeholder" data-i18n="form.namePlaceholder">
+      </div>
+      <div class="field">
+        <label for="f-contact" data-i18n="form.contactLabel">WhatsApp or email</label>
+        <input id="f-contact" type="text" name="contact" required placeholder="+212 6xx xxx xxx or you@example.com" data-i18n-attr="placeholder" data-i18n="form.contactPlaceholder">
+      </div>
+      <div class="field">
+        <label for="f-product" data-i18n="form.productLabel">You're interested in</label>
+        <select id="f-product" name="product">
+          <option data-i18n="form.opt1">Lamps</option>
+          <option data-i18n="form.opt2">Mirrors</option>
+          <option data-i18n="form.opt3">Parasols / outdoor</option>
+          <option data-i18n="form.opt4">Custom project</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-message" data-i18n="form.messageLabel">Your message</label>
+        <textarea id="f-message" name="message" rows="4" required placeholder="Dimensions, quantity, delivery city..." data-i18n-attr="placeholder" data-i18n="form.messagePlaceholder"></textarea>
+      </div>
+      <button type="submit" class="btn form-submit" data-i18n="form.submit">Send via WhatsApp →</button>
+      <p class="form-note" id="formNote" data-i18n="form.note">Thank you! We're opening WhatsApp with your message pre-filled.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="brand">
+          <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/LOGO%20TISELDI.jpeg" alt="Logo Coopérative Tiseldi">
+          <div class="brand-name">Tiseldi<span>Coopérative</span></div>
+        </div>
+        <p class="footer-tag" data-i18n="footer.tagline">A Moroccan heritage, handwoven from Ouarzazate.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#top" data-i18n="nav.accueil">Home</a>
+        <a href="#histoire" data-i18n="nav.histoire">Our Story</a>
+        <a href="#savoir-faire" data-i18n="nav.savoirfaire">Our Craft</a>
+        <a href="#collection" data-i18n="nav.collection">Collection</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="https://www.facebook.com/profile.php?id=61562658065434" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/cooperatve.tiseldi?igsi=MW8xb2xmc2M3b3l2cg==" target="_blank" rel="noreferrer">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Tiseldi Cooperative — Ouarzazate, Morocco</span>
+      <span data-i18n="footer.strip">Natural fibers · Handmade · Custom-made</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/212707776715" target="_blank" rel="noreferrer" aria-label="Contact Tiseldi on WhatsApp" data-i18n-attr="aria-label" data-i18n="float.waLabel">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12.1 2.2a9.75 9.75 0 0 0-8.4 14.7L2.2 21.8l5.05-1.47A9.75 9.75 0 1 0 12.1 2.2Zm0 17.8a8 8 0 0 1-4.08-1.12l-.29-.17-3 .87.89-2.92-.19-.3A8.02 8.02 0 1 1 12.1 20Zm4.4-5.98c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.18-1.41-1.32-1.65-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path></svg>
+</a>
+
+<!-- ===== Chat widget — Assistant Tiseldi ===== -->
+<button class="chat-toggle" id="chatToggle" aria-label="Open the Tiseldi assistant" data-i18n-attr="aria-label" data-i18n="chat.toggleLabel">
+  <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/LOGO%20TISELDI.jpeg" alt="Tiseldi Assistant">
+  <span class="ping"></span>
+  <span class="close-x">✕</span>
+</button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/LOGO%20TISELDI.jpeg" alt="Logo Tiseldi">
+    <div>
+      <div class="name" data-i18n="chat.name">Tiseldi Assistant</div>
+      <div class="status" data-i18n="chat.status">Online</div>
+    </div>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-row bot">
+      <img src="https://tiseldicooperative.github.io/tiseldi-cooperative/LOGO%20TISELDI.jpeg" alt="">
+      <div class="chat-bubble" id="chatWelcomeBubble" data-i18n="chat.welcome">Hello 👋 I'm the Tiseldi Cooperative assistant. Ask me anything about our natural-fiber creations — I can reply in Darija or French.</div>
+    </div>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="Type your message…" autocomplete="off" data-i18n-attr="placeholder" data-i18n="chat.inputPlaceholder">
+    <button id="chatSend" data-i18n="chat.send">Send</button>
+  </div>
+</div>
+
+<script>
+const TRANSLATIONS = {
+  "en": {
+    "meta.title": "Tiseldi — Traditional Weaving Cooperative, Ouarzazate",
+    "meta.description": "Tiseldi weaves light from Ouarzazate: lamps, mirrors, furniture and parasols in natural fibers, handcrafted by the cooperative's artisans.",
+    "nav.histoire": "Our Story",
+    "nav.savoirfaire": "Our Craft",
+    "nav.collection": "Collection",
+    "nav.contact": "Contact",
+    "nav.accueil": "Home",
+    "brand.tagline": "Cooperative",
+    "header.menuOpen": "Open menu",
+    "header.menuClose": "Close menu",
+    "header.whatsapp": "WhatsApp",
+    "hero.eyebrow": "Tiseldi Cooperative — Ouarzazate, Morocco",
+    "hero.h1": "Light, <em>woven</em><br>by hand.",
+    "hero.sub": "From our workshop in Ouarzazate, our artisans shape lamps, mirrors, furniture and parasols from plant fibers — palm, reed and raffia — following a craft passed down from generation to generation.",
+    "hero.cta1": "Discover the collection",
+    "hero.cta2": "Order custom-made",
+    "hero.scroll": "Scroll",
+    "histoire.eyebrow": "Our Story",
+    "histoire.h2": "Every fiber starts <em>from the earth</em>,<br>and comes back to live in your home.",
+    "histoire.p1": "The Tiseldi cooperative brings together artisans from the Ouarzazate region around a shared gesture: weaving local plant fibers — palm, reed, raffia — into lasting objects of light and décor.",
+    "histoire.p2": "Every piece begins with raw material harvested by hand, sun-dried, then woven using techniques passed from mother to daughter. No factory, no two pieces alike: the weave always keeps the trace of the hand that made it.",
+    "stat1.value": "100%",
+    "stat1.label": "Handmade",
+    "stat2.value": "Ouarzazate",
+    "stat2.label": "Fiber origin",
+    "stat3.value": "Made to order",
+    "stat3.label": "Dimensions & finishes",
+    "savoirfaire.eyebrow": "Our Craft",
+    "savoirfaire.h2": "From raw fiber <em>to finished piece</em>",
+    "craft1.title": "Harvest",
+    "craft1.desc": "Raffia, reed and palm are harvested locally, then sorted fiber by fiber for flexibility and color.",
+    "craft2.title": "Drying",
+    "craft2.desc": "The fibers dry in the Ouarzazate sun, which gives them the golden hue characteristic of our pieces.",
+    "craft3.title": "Weaving",
+    "craft3.desc": "Every shape — dome, arch, fringe — comes to life in the artisans' hands, with no mold or machine.",
+    "craft4.title": "Finishing",
+    "craft4.desc": "Structure, wiring and details are fitted to each piece, then checked one by one before shipping.",
+    "collection.eyebrow": "Our Collection",
+    "collection.h2": "Pieces that <em>light up</em><br>and last.",
+    "filter.all": "All",
+    "filter.eclairage": "Lighting",
+    "filter.miroir": "Mirrors",
+    "filter.mobilier": "Furniture",
+    "filter.exterieur": "Outdoor",
+    "filter.realisation": "Projects",
+    "tag.ext": "Outdoor",
+    "tag.miroir": "Mirror",
+    "tag.mobilier": "Furniture",
+    "tag.eclairage": "Lighting",
+    "tag.realisation": "Project",
+    "tag.surmesure": "Custom-made",
+    "price.onRequest": "Price on request",
+    "cta.order": "Order →",
+    "p1_title": "Douar Parasol",
+    "p1_desc": "Natural straw roof on a solid wood post, built-in table — for gardens and pools.",
+    "p2_title": "Log Mirror",
+    "p2_desc": "Frame made of natural wood logs assembled one by one, raw and warm finish.",
+    "p3_title": "Boho Clothes Rack",
+    "p3_desc": "Driftwood-style teepee clothes rack with a built-in low shelf for shoes and bags.",
+    "p4_title": "Riad Lounge Set",
+    "p4_desc": "Zellige coffee table with wrought-iron armchairs woven in natural rope.",
+    "p5_title": "Poolside Lounge",
+    "p5_desc": "Four round armchairs and a high table in light natural fiber — comfort and lightness.",
+    "p6_title": "Ksar Sphere",
+    "p6_desc": "Tightly woven, warm and enveloping light — our terrace best-seller.",
+    "p7_title": "Fringe Wall Lamp",
+    "p7_desc": "Woven half-moon wall fixture with loose fringes for soft, diffused light.",
+    "p8_title": "Root Lamp",
+    "p8_desc": "Conical raffia shade on a rope-wrapped metal tripod, set on a tree-trunk base.",
+    "p9_title": "Flower Pendant",
+    "p9_desc": "Petals alternating solid and openwork weave, for a delicate play of shadows on the ceiling.",
+    "p10_title": "Cascade Pendant",
+    "p10_desc": "Three woven tiers with a long fringe skirt — a boho, enveloping silhouette.",
+    "p11_title": "Diamond Trio",
+    "p11_desc": "Set of three lampshades in fine fiber with tassels, to place or hang.",
+    "p12_title": "Sphere Constellation",
+    "p12_desc": "Several round pendants with varied patterns, arranged to suit your ceiling heights.",
+    "p13_title": "Fluted Table",
+    "p13_desc": "Light wood log top on black pin-style metal legs — clean lines.",
+    "p14_title": "Log Trio",
+    "p14_desc": "Three round mirrors in graduated sizes, same wood-log frame spirit.",
+    "p15_title": "Oval Pendant",
+    "p15_desc": "Woven oval basket, a soft silhouette for hallways and entryways.",
+    "p16_title": "Conical Trio",
+    "p16_desc": "Openwork conical pendants, soft filtered light for a reed-mat ceiling.",
+    "p17_title": "Pear Pendant",
+    "p17_desc": "Curved silhouette with a belt of bamboo sections — a piece with real character.",
+    "p18_title": "Net Sphere",
+    "p18_desc": "Open mesh weave on the sides, solid bands at top and bottom.",
+    "p19_title": "Cylinder Wall Lamp",
+    "p19_desc": "Vertical raffia wall lamp, warm light stretching along the wall.",
+    "p20_title": "Round Dining Table",
+    "p20_desc": "Round table with four rattan chairs, matching raffia pendant above.",
+    "p21_title": "Restaurant Fit-Out",
+    "p21_desc": "Dining room dressed in woven reed matting and round pendants — a full project example.",
+    "p22_title": "Niche Mirror",
+    "p22_desc": "Wide fringed frame in natural fiber, with a built-in wall niche for everyday objects.",
+    "p23_title": "Terrace Fit-Out",
+    "p23_desc": "Full composition — pendants, seating and tables — for riads, restaurants and terraces.",
+    "p24_title": "Woven Ceiling",
+    "p24_desc": "Roofing structure of woven reeds over exposed beams — our architectural craftsmanship.",
+    "p25_title": "Down Pendant",
+    "p25_desc": "Woven dome with falling fringes, for a nest-like enveloping light.",
+    "p26_title": "Modern Trio",
+    "p26_desc": "Three mirrors with rounded corners, graduated sizes, a clean contemporary line.",
+    "p27_title": "Circle Trio",
+    "p27_desc": "Three round mirrors with a radiating frame, two-tone rope ties arranged in a cross.",
+    "p28_title": "Square Trio",
+    "p28_desc": "Three square frames with rounded corners, nested, with aligned rope ties.",
+    "p29_title": "Arch Trio",
+    "p29_desc": "Three arched mirrors in graduated sizes, two-tone rope ties at the joints.",
+    "p30_title": "Long Fringe Pendant",
+    "p30_desc": "Long, dense fringes falling from a woven collar, under a wood ceiling.",
+    "p31_title": "Bell Pendant",
+    "p31_desc": "Bell-shaped silhouette with a short-fringe base — soft, even light.",
+    "quote.text": "“In every woven fiber, <em>there is a hand</em>, a season, and a little of the earth of Ouarzazate.”",
+    "quote.cite": "— The artisans of the Tiseldi cooperative",
+    "contact.eyebrow": "Let's weave it together",
+    "contact.h2": "A question about <em>dimensions</em>, a custom order or a delivery?",
+    "contact.p": "Write to us directly — we usually reply the same day.",
+    "contact.whatsappLabel": "WhatsApp",
+    "contact.emailLabel": "Email",
+    "contact.atelierLabel": "Workshop",
+    "contact.atelierValue": "Ouarzazate, Morocco",
+    "form.nameLabel": "Full name",
+    "form.namePlaceholder": "Your name",
+    "form.contactLabel": "WhatsApp or email",
+    "form.contactPlaceholder": "+212 6xx xxx xxx or you@example.com",
+    "form.productLabel": "You're interested in",
+    "form.opt1": "Lamps",
+    "form.opt2": "Mirrors",
+    "form.opt3": "Parasols / outdoor",
+    "form.opt4": "Custom project",
+    "form.messageLabel": "Your message",
+    "form.messagePlaceholder": "Dimensions, quantity, delivery city...",
+    "form.submit": "Send via WhatsApp →",
+    "form.note": "Thank you! We're opening WhatsApp with your message pre-filled.",
+    "footer.tagline": "A Moroccan heritage, handwoven from Ouarzazate.",
+    "footer.copyright": "© 2026 Tiseldi Cooperative — Ouarzazate, Morocco",
+    "footer.strip": "Natural fibers · Handmade · Custom-made",
+    "float.waLabel": "Contact Tiseldi on WhatsApp",
+    "chat.toggleLabel": "Open the Tiseldi assistant",
+    "chat.name": "Tiseldi Assistant",
+    "chat.status": "Online",
+    "chat.welcome": "Hello 👋 I'm the Tiseldi Cooperative assistant. Ask me anything about our natural-fiber creations — I can reply in Darija or French.",
+    "chat.inputPlaceholder": "Type your message…",
+    "chat.send": "Send"
+  },
+  "fr": {
+    "meta.title": "Tiseldi — Coopérative de tissage traditionnel, Ouarzazate",
+    "meta.description": "Tiseldi tisse la lumière depuis Ouarzazate : luminaires, miroirs, mobilier et parasols en fibres naturelles, façonnés à la main par les artisanes de la coopérative.",
+    "nav.histoire": "Notre histoire",
+    "nav.savoirfaire": "Le savoir-faire",
+    "nav.collection": "Créations",
+    "nav.contact": "Contact",
+    "nav.accueil": "Accueil",
+    "brand.tagline": "Coopérative",
+    "header.menuOpen": "Ouvrir le menu",
+    "header.menuClose": "Fermer le menu",
+    "header.whatsapp": "WhatsApp",
+    "hero.eyebrow": "Coopérative Tiseldi — Ouarzazate, Maroc",
+    "hero.h1": "La lumière, <em>tissée</em><br>à la main.",
+    "hero.sub": "Depuis notre atelier de Ouarzazate, nos artisanes façonnent luminaires, miroirs, mobilier et parasols en fibres végétales — palme, jonc et raphia — au rythme d'un savoir-faire transmis de génération en génération.",
+    "hero.cta1": "Découvrir les créations",
+    "hero.cta2": "Commander sur mesure",
+    "hero.scroll": "Défiler",
+    "histoire.eyebrow": "Notre histoire",
+    "histoire.h2": "Chaque fibre part <em>de la terre</em>,<br>et revient habiter vos intérieurs.",
+    "histoire.p1": "La coopérative Tiseldi réunit des artisanes de la région de Ouarzazate autour d'un même geste : tresser des fibres végétales locales — palme, jonc, raphia — pour donner naissance à des objets de lumière et de décoration qui durent.",
+    "histoire.p2": "Chaque pièce naît d'une matière première récoltée à la main, séchée au soleil, puis tissée selon des techniques transmises de mère en fille. Aucune usine, aucune série identique : le tissage garde toujours la trace de la main qui l'a fait.",
+    "stat1.value": "100%",
+    "stat1.label": "Fait main",
+    "stat2.value": "Ouarzazate",
+    "stat2.label": "Origine des fibres",
+    "stat3.value": "Sur mesure",
+    "stat3.label": "Dimensions & finitions",
+    "savoirfaire.eyebrow": "Le savoir-faire",
+    "savoirfaire.h2": "De la fibre brute <em>à l'objet fini</em>",
+    "craft1.title": "Récolte",
+    "craft1.desc": "Le raphia, le jonc et la palme sont récoltés localement, puis triés fibre par fibre selon leur souplesse et leur teinte.",
+    "craft2.title": "Séchage",
+    "craft2.desc": "Les fibres sèchent au soleil de Ouarzazate, qui leur donne cette teinte dorée caractéristique de nos créations.",
+    "craft3.title": "Tissage",
+    "craft3.desc": "Chaque forme — dôme, arche, frange — prend vie entre les mains des artisanes, sans moule ni machine.",
+    "craft4.title": "Finition",
+    "craft4.desc": "Structure, câblage et détails sont ajustés à la pièce, puis vérifiés un à un avant expédition.",
+    "collection.eyebrow": "Nos créations",
+    "collection.h2": "Des pièces qui <em>éclairent</em><br>et qui durent.",
+    "filter.all": "Tout",
+    "filter.eclairage": "Éclairage",
+    "filter.miroir": "Miroirs",
+    "filter.mobilier": "Mobilier",
+    "filter.exterieur": "Extérieur",
+    "filter.realisation": "Réalisations",
+    "tag.ext": "Extérieur",
+    "tag.miroir": "Miroir",
+    "tag.mobilier": "Mobilier",
+    "tag.eclairage": "Éclairage",
+    "tag.realisation": "Réalisation",
+    "tag.surmesure": "Sur mesure",
+    "price.onRequest": "Prix sur demande",
+    "cta.order": "Commander →",
+    "p1_title": "Parasol Douar",
+    "p1_desc": "Toit en paille naturelle sur pied bois massif, table intégrée — pour jardins et piscines.",
+    "p2_title": "Miroir Rondins",
+    "p2_desc": "Cadre composé de rondins de bois naturel assemblés un à un, finition brute et chaleureuse.",
+    "p3_title": "Portant Bohème",
+    "p3_desc": "Portant en bois flotté façon tipi, étagère basse intégrée pour chaussures et sacs.",
+    "p4_title": "Salon Riad",
+    "p4_desc": "Table basse en zellige et fauteuils en fer forgé tressés à la corde naturelle.",
+    "p5_title": "Salon Piscine",
+    "p5_desc": "Quatre fauteuils ronds et table haute en fibre naturelle claire — confort et légèreté.",
+    "p6_title": "Sphère Ksar",
+    "p6_desc": "Tressage serré, lumière chaude et enveloppante — notre best-seller en terrasse.",
+    "p7_title": "Applique Frange",
+    "p7_desc": "Demi-lune tressée à poser au mur, franges libres pour une lumière douce et diffuse.",
+    "p8_title": "Lampe Racine",
+    "p8_desc": "Abat-jour conique en raphia fin sur trépied métal cordé, posé sur socle en tronc de bois.",
+    "p9_title": "Suspension Fleur",
+    "p9_desc": "Pétales alternant tressage plein et claire-voie, pour un jeu d'ombres délicat au plafond.",
+    "p10_title": "Suspension Cascade",
+    "p10_desc": "Trois niveaux tressés, jupe de franges longues — silhouette bohème et enveloppante.",
+    "p11_title": "Trio Losange",
+    "p11_desc": "Composition de trois abat-jours en fibre fine et pampilles, à poser ou suspendre.",
+    "p12_title": "Constellation Sphères",
+    "p12_desc": "Plusieurs suspensions rondes à motifs variés, à composer selon vos hauteurs de plafond.",
+    "p13_title": "Table Cannelée",
+    "p13_desc": "Plateau en rondins de bois clair sur pieds métal noir façon épingle — ligne épurée.",
+    "p14_title": "Trio Rondins",
+    "p14_desc": "Trois miroirs ronds, tailles dégradées, même esprit de cadre en rondins de bois.",
+    "p15_title": "Suspension Ovale",
+    "p15_desc": "Nacelle ovale tressée, silhouette douce pour couloirs et entrées.",
+    "p16_title": "Trio Conique",
+    "p16_desc": "Suspensions coniques à claire-voie, lumière tamisée pour un plafond en canisse.",
+    "p17_title": "Suspension Poire",
+    "p17_desc": "Silhouette galbée, ceinture en tronçons de bambou — une pièce au caractère affirmé.",
+    "p18_title": "Sphère Filet",
+    "p18_desc": "Tressage à mailles ajourées sur les côtés, bandes pleines en haut et en bas.",
+    "p19_title": "Applique Cylindre",
+    "p19_desc": "Applique verticale en raphia, lumière chaude qui s'étire le long du mur.",
+    "p20_title": "Table à Manger Ronde",
+    "p20_desc": "Table ronde et quatre chaises en rotin, suspension raphia assortie au-dessus.",
+    "p21_title": "Aménagement Restaurant",
+    "p21_desc": "Salle habillée de canisse tressée et suspensions rondes — exemple de réalisation complète.",
+    "p22_title": "Miroir Niche",
+    "p22_desc": "Large cadre frangé en fibres naturelles, niche murale intégrée pour vos objets du quotidien.",
+    "p23_title": "Aménagement Terrasse",
+    "p23_desc": "Composition complète — suspensions, assises et tables — pour riads, restaurants et terrasses.",
+    "p24_title": "Plafond Tressé",
+    "p24_desc": "Structure de toiture en roseaux tissés sur poutres apparentes — notre savoir-faire en architecture.",
+    "p25_title": "Suspension Duvet",
+    "p25_desc": "Dôme tressé et franges tombantes, pour une lumière enveloppante façon nid.",
+    "p26_title": "Trio Moderne",
+    "p26_desc": "Trois miroirs aux angles arrondis, tailles dégradées, ligne contemporaine et épurée.",
+    "p27_title": "Trio Cercle",
+    "p27_desc": "Trois miroirs ronds à cadre rayonnant, attaches de corde bicolores réparties en croix.",
+    "p28_title": "Trio Carré",
+    "p28_desc": "Trois cadres carrés aux angles arrondis, emboîtés, attaches de corde alignées.",
+    "p29_title": "Trio Arche",
+    "p29_desc": "Trois miroirs en arche, tailles dégradées, ligatures de corde bicolores aux jonctions.",
+    "p30_title": "Suspension Longue Frange",
+    "p30_desc": "Franges longues et denses tombant d'un col tressé, sous plafond en bois.",
+    "p31_title": "Suspension Cloche",
+    "p31_desc": "Silhouette en cloche, base à franges courtes — lumière douce et régulière.",
+    "quote.text": "« Dans chaque fibre tissée, <em>il y a une main</em>, une saison, et un peu de la terre de Ouarzazate. »",
+    "quote.cite": "— Les artisanes de la coopérative Tiseldi",
+    "contact.eyebrow": "Tissons-la ensemble",
+    "contact.h2": "Une question de <em>dimensions</em>, une commande sur mesure ou une livraison ?",
+    "contact.p": "Écrivez-nous directement — nous répondons en général le jour même.",
+    "contact.whatsappLabel": "WhatsApp",
+    "contact.emailLabel": "E-mail",
+    "contact.atelierLabel": "Atelier",
+    "contact.atelierValue": "Ouarzazate, Maroc",
+    "form.nameLabel": "Nom complet",
+    "form.namePlaceholder": "Votre nom",
+    "form.contactLabel": "WhatsApp ou e-mail",
+    "form.contactPlaceholder": "+212 6xx xxx xxx ou vous@exemple.com",
+    "form.productLabel": "Vous vous intéressez à",
+    "form.opt1": "Luminaires",
+    "form.opt2": "Miroirs",
+    "form.opt3": "Parasols / extérieur",
+    "form.opt4": "Projet sur mesure",
+    "form.messageLabel": "Votre message",
+    "form.messagePlaceholder": "Dimensions, quantité, ville de livraison...",
+    "form.submit": "Envoyer sur WhatsApp →",
+    "form.note": "Merci ! Nous ouvrons WhatsApp avec votre message pré-rempli.",
+    "footer.tagline": "Un patrimoine marocain, tissé à la main depuis Ouarzazate.",
+    "footer.copyright": "© 2026 Coopérative Tiseldi — Ouarzazate, Maroc",
+    "footer.strip": "Fibres naturelles · Fait main · Sur mesure",
+    "float.waLabel": "Contacter Tiseldi sur WhatsApp",
+    "chat.toggleLabel": "Ouvrir l'assistant Tiseldi",
+    "chat.name": "Assistant Tiseldi",
+    "chat.status": "En ligne",
+    "chat.welcome": "Bonjour 👋 Je suis l'assistant de la Coopérative Tiseldi. Posez-moi vos questions sur nos créations en fibres naturelles — je réponds en darija ou en français.",
+    "chat.inputPlaceholder": "Écrivez votre message…",
+    "chat.send": "Envoyer"
+  },
+  "es": {
+    "meta.title": "Tiseldi — Cooperativa de tejido tradicional, Ouarzazate",
+    "meta.description": "Tiseldi teje la luz desde Ouarzazate: lámparas, espejos, mobiliario y sombrillas en fibras naturales, hechos a mano por las artesanas de la cooperativa.",
+    "nav.histoire": "Nuestra historia",
+    "nav.savoirfaire": "Nuestro saber hacer",
+    "nav.collection": "Creaciones",
+    "nav.contact": "Contacto",
+    "nav.accueil": "Inicio",
+    "brand.tagline": "Cooperativa",
+    "header.menuOpen": "Abrir menú",
+    "header.menuClose": "Cerrar menú",
+    "header.whatsapp": "WhatsApp",
+    "hero.eyebrow": "Cooperativa Tiseldi — Ouarzazate, Marruecos",
+    "hero.h1": "La luz, <em>tejida</em><br>a mano.",
+    "hero.sub": "Desde nuestro taller en Ouarzazate, nuestras artesanas dan forma a lámparas, espejos, mobiliario y sombrillas con fibras vegetales — palma, junco y rafia — según un saber hacer transmitido de generación en generación.",
+    "hero.cta1": "Descubrir las creaciones",
+    "hero.cta2": "Pedir a medida",
+    "hero.scroll": "Desplázate",
+    "histoire.eyebrow": "Nuestra historia",
+    "histoire.h2": "Cada fibra parte <em>de la tierra</em>,<br>y vuelve para habitar tus interiores.",
+    "histoire.p1": "La cooperativa Tiseldi reúne a artesanas de la región de Ouarzazate en torno a un mismo gesto: trenzar fibras vegetales locales — palma, junco, rafia — para dar vida a objetos de luz y decoración duraderos.",
+    "histoire.p2": "Cada pieza nace de una materia prima recolectada a mano, secada al sol y luego tejida según técnicas transmitidas de madre a hija. Sin fábricas, sin series idénticas: el tejido siempre conserva la huella de la mano que lo hizo.",
+    "stat1.value": "100%",
+    "stat1.label": "Hecho a mano",
+    "stat2.value": "Ouarzazate",
+    "stat2.label": "Origen de las fibras",
+    "stat3.value": "A medida",
+    "stat3.label": "Dimensiones y acabados",
+    "savoirfaire.eyebrow": "Nuestro saber hacer",
+    "savoirfaire.h2": "De la fibra bruta <em>al objeto terminado</em>",
+    "craft1.title": "Recolección",
+    "craft1.desc": "La rafia, el junco y la palma se recolectan localmente y se clasifican fibra por fibra según su flexibilidad y su tono.",
+    "craft2.title": "Secado",
+    "craft2.desc": "Las fibras se secan al sol de Ouarzazate, que les da ese tono dorado característico de nuestras creaciones.",
+    "craft3.title": "Tejido",
+    "craft3.desc": "Cada forma — cúpula, arco, fleco — cobra vida entre las manos de las artesanas, sin molde ni máquina.",
+    "craft4.title": "Acabado",
+    "craft4.desc": "La estructura, el cableado y los detalles se ajustan a cada pieza, y se revisan uno a uno antes del envío.",
+    "collection.eyebrow": "Nuestras creaciones",
+    "collection.h2": "Piezas que <em>iluminan</em><br>y perduran.",
+    "filter.all": "Todo",
+    "filter.eclairage": "Iluminación",
+    "filter.miroir": "Espejos",
+    "filter.mobilier": "Mobiliario",
+    "filter.exterieur": "Exterior",
+    "filter.realisation": "Proyectos",
+    "tag.ext": "Exterior",
+    "tag.miroir": "Espejo",
+    "tag.mobilier": "Mobiliario",
+    "tag.eclairage": "Iluminación",
+    "tag.realisation": "Proyecto",
+    "tag.surmesure": "A medida",
+    "price.onRequest": "Precio a consultar",
+    "cta.order": "Pedir →",
+    "p1_title": "Parasol Douar",
+    "p1_desc": "Techo de paja natural sobre pie de madera maciza, mesa integrada — para jardines y piscinas.",
+    "p2_title": "Espejo Troncos",
+    "p2_desc": "Marco compuesto de troncos de madera natural ensamblados uno a uno, acabado rústico y cálido.",
+    "p3_title": "Perchero Bohemio",
+    "p3_desc": "Perchero de madera flotante estilo tipi, con estante bajo integrado para zapatos y bolsos.",
+    "p4_title": "Salón Riad",
+    "p4_desc": "Mesa baja de zellige y sillones de hierro forjado tejidos con cuerda natural.",
+    "p5_title": "Salón Piscina",
+    "p5_desc": "Cuatro sillones redondos y mesa alta en fibra natural clara — confort y ligereza.",
+    "p6_title": "Esfera Ksar",
+    "p6_desc": "Tejido tupido, luz cálida y envolvente — nuestro más vendido para terrazas.",
+    "p7_title": "Aplique Flecos",
+    "p7_desc": "Media luna tejida para pared, flecos sueltos para una luz suave y difusa.",
+    "p8_title": "Lámpara Raíz",
+    "p8_desc": "Pantalla cónica de rafia fina sobre trípode metálico cordado, apoyada en base de tronco.",
+    "p9_title": "Colgante Flor",
+    "p9_desc": "Pétalos que alternan tejido tupido y calado, para un delicado juego de sombras en el techo.",
+    "p10_title": "Colgante Cascada",
+    "p10_desc": "Tres niveles tejidos, falda de flecos largos — silueta bohemia y envolvente.",
+    "p11_title": "Trío Rombo",
+    "p11_desc": "Composición de tres pantallas en fibra fina y borlas, para colocar o colgar.",
+    "p12_title": "Constelación de Esferas",
+    "p12_desc": "Varios colgantes redondos con motivos variados, para componer según la altura de su techo.",
+    "p13_title": "Mesa Acanalada",
+    "p13_desc": "Tablero de troncos de madera clara sobre patas metálicas negras tipo aguja — línea depurada.",
+    "p14_title": "Trío Troncos",
+    "p14_desc": "Tres espejos redondos, tamaños escalonados, mismo espíritu de marco de troncos.",
+    "p15_title": "Colgante Ovalado",
+    "p15_desc": "Cesta ovalada tejida, silueta suave para pasillos y entradas.",
+    "p16_title": "Trío Cónico",
+    "p16_desc": "Colgantes cónicos calados, luz tamizada para un techo de cañizo.",
+    "p17_title": "Colgante Pera",
+    "p17_desc": "Silueta curvada, cinturón de secciones de bambú — una pieza de carácter marcado.",
+    "p18_title": "Esfera Red",
+    "p18_desc": "Tejido de malla calada en los lados, bandas macizas arriba y abajo.",
+    "p19_title": "Aplique Cilindro",
+    "p19_desc": "Aplique vertical de rafia, luz cálida que se extiende a lo largo del muro.",
+    "p20_title": "Mesa de Comedor Redonda",
+    "p20_desc": "Mesa redonda y cuatro sillas de ratán, con colgante de rafia a juego encima.",
+    "p21_title": "Acondicionamiento de Restaurante",
+    "p21_desc": "Sala revestida de cañizo trenzado y colgantes redondos — ejemplo de proyecto completo.",
+    "p22_title": "Espejo Nicho",
+    "p22_desc": "Amplio marco de flecos en fibras naturales, con nicho de pared integrado para objetos cotidianos.",
+    "p23_title": "Acondicionamiento de Terraza",
+    "p23_desc": "Composición completa — colgantes, asientos y mesas — para riads, restaurantes y terrazas.",
+    "p24_title": "Techo Trenzado",
+    "p24_desc": "Estructura de techo en cañas tejidas sobre vigas vistas — nuestro saber hacer en arquitectura.",
+    "p25_title": "Colgante Plumón",
+    "p25_desc": "Cúpula tejida y flecos caídos, para una luz envolvente tipo nido.",
+    "p26_title": "Trío Moderno",
+    "p26_desc": "Tres espejos de esquinas redondeadas, tamaños escalonados, línea contemporánea y depurada.",
+    "p27_title": "Trío Círculo",
+    "p27_desc": "Tres espejos redondos de marco radiante, ataduras de cuerda bicolor distribuidas en cruz.",
+    "p28_title": "Trío Cuadrado",
+    "p28_desc": "Tres marcos cuadrados de esquinas redondeadas, encajados, ataduras de cuerda alineadas.",
+    "p29_title": "Trío Arco",
+    "p29_desc": "Tres espejos en arco, tamaños escalonados, ligaduras de cuerda bicolor en las uniones.",
+    "p30_title": "Colgante Flecos Largos",
+    "p30_desc": "Flecos largos y densos que caen de un cuello tejido, bajo techo de madera.",
+    "p31_title": "Colgante Campana",
+    "p31_desc": "Silueta de campana, base de flecos cortos — luz suave y uniforme.",
+    "quote.text": "«En cada fibra tejida <em>hay una mano</em>, una estación, y un poco de la tierra de Ouarzazate.»",
+    "quote.cite": "— Las artesanas de la cooperativa Tiseldi",
+    "contact.eyebrow": "Tejámoslo juntos",
+    "contact.h2": "¿Una pregunta sobre <em>dimensiones</em>, un pedido a medida o una entrega?",
+    "contact.p": "Escríbanos directamente — normalmente respondemos el mismo día.",
+    "contact.whatsappLabel": "WhatsApp",
+    "contact.emailLabel": "Correo electrónico",
+    "contact.atelierLabel": "Taller",
+    "contact.atelierValue": "Ouarzazate, Marruecos",
+    "form.nameLabel": "Nombre completo",
+    "form.namePlaceholder": "Su nombre",
+    "form.contactLabel": "WhatsApp o correo electrónico",
+    "form.contactPlaceholder": "+212 6xx xxx xxx o usted@ejemplo.com",
+    "form.productLabel": "Está interesado/a en",
+    "form.opt1": "Lámparas",
+    "form.opt2": "Espejos",
+    "form.opt3": "Sombrillas / exterior",
+    "form.opt4": "Proyecto a medida",
+    "form.messageLabel": "Su mensaje",
+    "form.messagePlaceholder": "Dimensiones, cantidad, ciudad de entrega...",
+    "form.submit": "Enviar por WhatsApp →",
+    "form.note": "¡Gracias! Abrimos WhatsApp con su mensaje ya redactado.",
+    "footer.tagline": "Un patrimonio marroquí, tejido a mano desde Ouarzazate.",
+    "footer.copyright": "© 2026 Cooperativa Tiseldi — Ouarzazate, Marruecos",
+    "footer.strip": "Fibras naturales · Hecho a mano · A medida",
+    "float.waLabel": "Contactar a Tiseldi por WhatsApp",
+    "chat.toggleLabel": "Abrir el asistente de Tiseldi",
+    "chat.name": "Asistente Tiseldi",
+    "chat.status": "En línea",
+    "chat.welcome": "Hola 👋 Soy el asistente de la Cooperativa Tiseldi. Pregúnteme lo que quiera sobre nuestras creaciones en fibras naturales — respondo en darija o en francés.",
+    "chat.inputPlaceholder": "Escriba su mensaje…",
+    "chat.send": "Enviar"
+  },
+  "ar": {
+    "meta.title": "تيسلدي — تعاونية النسيج التقليدي، ورزازات",
+    "meta.description": "تنسج تيسلدي الضوء من ورزازات: مصابيح، مرايا، أثاث ومظلات من الألياف الطبيعية، تصنعها يدويًا حرفيات التعاونية.",
+    "nav.histoire": "قصتنا",
+    "nav.savoirfaire": "حرفتنا",
+    "nav.collection": "إبداعاتنا",
+    "nav.contact": "تواصل",
+    "nav.accueil": "الرئيسية",
+    "brand.tagline": "تعاونية",
+    "header.menuOpen": "فتح القائمة",
+    "header.menuClose": "إغلاق القائمة",
+    "header.whatsapp": "واتساب",
+    "hero.eyebrow": "تعاونية تيسلدي — ورزازات، المغرب",
+    "hero.h1": "الضوء، <em>منسوج</em><br>باليد.",
+    "hero.sub": "من ورشتنا في ورزازات، تصنع حرفياتنا مصابيح ومرايا وأثاثًا ومظلات من الألياف النباتية — النخيل والبردي والرافيا — وفق حرفة تنتقل من جيل إلى جيل.",
+    "hero.cta1": "اكتشف الإبداعات",
+    "hero.cta2": "اطلب حسب المقاس",
+    "hero.scroll": "مرر للأسفل",
+    "histoire.eyebrow": "قصتنا",
+    "histoire.h2": "كل ليف ينطلق <em>من الأرض</em>،<br>ليعود ليسكن بيتك.",
+    "histoire.p1": "تجمع تعاونية تيسلدي حرفيات من منطقة ورزازات حول حركة واحدة: جدل الألياف النباتية المحلية — النخيل والبردي والرافيا — لصنع قطع إضاءة وديكور تدوم طويلًا.",
+    "histoire.p2": "تولد كل قطعة من مادة خام تُقطف يدويًا وتُجفَّف في الشمس، ثم تُنسج وفق تقنيات تنتقل من الأم إلى ابنتها. لا مصنع ولا قطعتان متطابقتان: يحتفظ النسيج دائمًا بأثر اليد التي صنعته.",
+    "stat1.value": "100%",
+    "stat1.label": "صناعة يدوية",
+    "stat2.value": "ورزازات",
+    "stat2.label": "أصل الألياف",
+    "stat3.value": "حسب الطلب",
+    "stat3.label": "الأبعاد والتشطيبات",
+    "savoirfaire.eyebrow": "حرفتنا",
+    "savoirfaire.h2": "من الليف الخام <em>إلى القطعة النهائية</em>",
+    "craft1.title": "الحصاد",
+    "craft1.desc": "تُحصد الرافيا والبردي والنخيل محليًا، ثم تُفرز ليفة بليفة حسب مرونتها ولونها.",
+    "craft2.title": "التجفيف",
+    "craft2.desc": "تُجفَّف الألياف تحت شمس ورزازات، التي تمنحها اللون الذهبي المميز لإبداعاتنا.",
+    "craft3.title": "النسج",
+    "craft3.desc": "كل شكل — قبة، قوس، هدب — يُولد بين أيدي الحرفيات، دون قالب أو آلة.",
+    "craft4.title": "التشطيب",
+    "craft4.desc": "يُضبط الهيكل والأسلاك والتفاصيل حسب القطعة، ثم تُفحص واحدة تلو الأخرى قبل الشحن.",
+    "collection.eyebrow": "إبداعاتنا",
+    "collection.h2": "قطع <em>تُنير</em><br>وتدوم.",
+    "filter.all": "الكل",
+    "filter.eclairage": "إضاءة",
+    "filter.miroir": "مرايا",
+    "filter.mobilier": "أثاث",
+    "filter.exterieur": "خارجي",
+    "filter.realisation": "إنجازات",
+    "tag.ext": "خارجي",
+    "tag.miroir": "مرآة",
+    "tag.mobilier": "أثاث",
+    "tag.eclairage": "إضاءة",
+    "tag.realisation": "إنجاز",
+    "tag.surmesure": "حسب الطلب",
+    "price.onRequest": "السعر عند الطلب",
+    "cta.order": "اطلب ←",
+    "p1_title": "مظلة دوار",
+    "p1_desc": "سقف من القش الطبيعي على قاعدة خشبية صلبة، مع طاولة مدمجة — للحدائق والمسابح.",
+    "p2_title": "مرآة الجذوع",
+    "p2_desc": "إطار مكوّن من جذوع خشبية طبيعية مُجمّعة واحدة تلو الأخرى، بلمسة نهائية خام ودافئة.",
+    "p3_title": "علاّقة بوهيمية",
+    "p3_desc": "علاّقة ملابس بشكل خيمة من الخشب الطافي، مع رف سفلي مدمج للأحذية والحقائب.",
+    "p4_title": "صالون الرياض",
+    "p4_desc": "طاولة منخفضة من الزليج ومقاعد من الحديد المطاوع منسوجة بحبل طبيعي.",
+    "p5_title": "صالون المسبح",
+    "p5_desc": "أربعة مقاعد دائرية وطاولة عالية من الألياف الطبيعية الفاتحة — راحة وخفة.",
+    "p6_title": "كرة قصر",
+    "p6_desc": "نسيج محكم، وضوء دافئ يلف المكان — منتجنا الأكثر مبيعًا للشرفات.",
+    "p7_title": "تطبيقة الأهداب",
+    "p7_desc": "نصف قمر منسوج يُثبّت على الحائط، بأهداب حرة لضوء ناعم ومنتشر.",
+    "p8_title": "مصباح الجذر",
+    "p8_desc": "غطاء مخروطي من الرافيا الرفيعة على حامل ثلاثي معدني مكسو بالحبل، فوق قاعدة من جذع خشبي.",
+    "p9_title": "معلقة الزهرة",
+    "p9_desc": "بتلات تتناوب بين النسيج المصمت والمُخرّم، لتكوّن لعبة ظلال رقيقة على السقف.",
+    "p10_title": "معلقة الشلال",
+    "p10_desc": "ثلاث طبقات منسوجة وتنّورة من الأهداب الطويلة — شكل بوهيمي يلف المكان.",
+    "p11_title": "ثلاثية المعين",
+    "p11_desc": "تركيبة من ثلاثة أغطية مصابيح من الألياف الرفيعة والشراريب، توضع أو تُعلّق.",
+    "p12_title": "كوكبة الكرات",
+    "p12_desc": "عدة معلقات دائرية بنقوش متنوعة، تُركّب حسب ارتفاع سقفك.",
+    "p13_title": "طاولة مضلعة",
+    "p13_desc": "سطح من جذوع خشبية فاتحة على أرجل معدنية سوداء نحيلة — خط أنيق ونظيف.",
+    "p14_title": "ثلاثية الجذوع",
+    "p14_desc": "ثلاث مرايا دائرية بأحجام متدرجة، بنفس روح الإطار من جذوع الخشب.",
+    "p15_title": "معلقة بيضاوية",
+    "p15_desc": "سلة بيضاوية منسوجة، بشكل ناعم يناسب الممرات والمداخل.",
+    "p16_title": "ثلاثية مخروطية",
+    "p16_desc": "معلقات مخروطية مُخرّمة، بضوء خافت مناسب لسقف من القصب.",
+    "p17_title": "معلقة الكمثرى",
+    "p17_desc": "شكل منحني بحزام من قطع الخيزران — قطعة ذات طابع مميز.",
+    "p18_title": "كرة الشبكة",
+    "p18_desc": "نسيج مُخرّم بعيون مفتوحة على الجوانب، مع أشرطة مصمتة أعلى وأسفل.",
+    "p19_title": "تطبيقة أسطوانية",
+    "p19_desc": "تطبيقة جدارية عمودية من الرافيا، ضوء دافئ يمتد على طول الجدار.",
+    "p20_title": "طاولة طعام دائرية",
+    "p20_desc": "طاولة دائرية وأربعة كراسي من الخيزران، مع معلقة رافيا مطابقة فوقها.",
+    "p21_title": "تجهيز مطعم",
+    "p21_desc": "قاعة مكسوّة بالقصب المنسوج ومعلقات دائرية — نموذج لإنجاز متكامل.",
+    "p22_title": "مرآة الفتحة",
+    "p22_desc": "إطار عريض بأهداب من الألياف الطبيعية، مع فتحة جدارية مدمجة لأغراضك اليومية.",
+    "p23_title": "تجهيز شرفة",
+    "p23_desc": "تركيبة متكاملة — معلقات ومقاعد وطاولات — للرياضات والمطاعم والشرفات.",
+    "p24_title": "سقف منسوج",
+    "p24_desc": "هيكل سقف من القصب المنسوج فوق عوارض ظاهرة — خبرتنا في العمارة.",
+    "p25_title": "معلقة الريش",
+    "p25_desc": "قبة منسوجة وأهداب متدلية، لضوء يحيط بالمكان على شكل عش.",
+    "p26_title": "ثلاثية عصرية",
+    "p26_desc": "ثلاث مرايا بزوايا مدوّرة وأحجام متدرجة، بخط عصري ونظيف.",
+    "p27_title": "ثلاثية الدائرة",
+    "p27_desc": "ثلاث مرايا دائرية بإطار مشعّ، وربطات حبل ثنائية اللون موزعة على شكل صليب.",
+    "p28_title": "ثلاثية المربع",
+    "p28_desc": "ثلاثة إطارات مربعة بزوايا مدوّرة، متداخلة، بربطات حبل مصفوفة.",
+    "p29_title": "ثلاثية القوس",
+    "p29_desc": "ثلاث مرايا مقوّسة بأحجام متدرجة، بربطات حبل ثنائية اللون عند نقاط الوصل.",
+    "p30_title": "معلقة الأهداب الطويلة",
+    "p30_desc": "أهداب طويلة وكثيفة تتدلى من طوق منسوج، تحت سقف خشبي.",
+    "p31_title": "معلقة الجرس",
+    "p31_desc": "شكل يشبه الجرس بقاعدة من أهداب قصيرة — ضوء ناعم ومنتظم.",
+    "quote.text": "«في كل ليفة منسوجة، <em>توجد يد</em>، وفصل، وقليل من تراب ورزازات.»",
+    "quote.cite": "— حرفيات تعاونية تيسلدي",
+    "contact.eyebrow": "لننسجها معًا",
+    "contact.h2": "سؤال حول <em>الأبعاد</em>، أو طلب حسب المقاس، أو التوصيل؟",
+    "contact.p": "راسلونا مباشرة — عادةً ما نرد في نفس اليوم.",
+    "contact.whatsappLabel": "واتساب",
+    "contact.emailLabel": "البريد الإلكتروني",
+    "contact.atelierLabel": "الورشة",
+    "contact.atelierValue": "ورزازات، المغرب",
+    "form.nameLabel": "الاسم الكامل",
+    "form.namePlaceholder": "اسمك",
+    "form.contactLabel": "واتساب أو البريد الإلكتروني",
+    "form.contactPlaceholder": "‎+212 6xx xxx xxx أو you@example.com",
+    "form.productLabel": "أنت مهتم بـ",
+    "form.opt1": "مصابيح",
+    "form.opt2": "مرايا",
+    "form.opt3": "مظلات / خارجي",
+    "form.opt4": "مشروع حسب الطلب",
+    "form.messageLabel": "رسالتك",
+    "form.messagePlaceholder": "الأبعاد، الكمية، مدينة التوصيل...",
+    "form.submit": "إرسال عبر واتساب ←",
+    "form.note": "شكرًا! سنفتح واتساب مع رسالتك جاهزة مسبقًا.",
+    "footer.tagline": "إرث مغربي، منسوج يدويًا من ورزازات.",
+    "footer.copyright": "© 2026 تعاونية تيسلدي — ورزازات، المغرب",
+    "footer.strip": "ألياف طبيعية · صناعة يدوية · حسب الطلب",
+    "float.waLabel": "تواصل مع تيسلدي عبر واتساب",
+    "chat.toggleLabel": "افتح مساعد تيسلدي",
+    "chat.name": "مساعد تيسلدي",
+    "chat.status": "متصل الآن",
+    "chat.welcome": "مرحبًا 👋 أنا مساعد تعاونية تيسلدي. اطرح عليّ أسئلتك حول إبداعاتنا من الألياف الطبيعية — أجيب بالدارجة أو الفرنسية.",
+    "chat.inputPlaceholder": "اكتب رسالتك…",
+    "chat.send": "إرسال"
+  }
+};
+
+    const RTL_LANGS = ["ar"];
+    const STORAGE_KEY = null; // no persistent storage; language resets to default on reload
+    let currentLang = "en";
+
+    function detectInitialLang(){
+      const supported = Object.keys(TRANSLATIONS);
+      const nav = (navigator.language || navigator.userLanguage || "en").slice(0,2).toLowerCase();
+      return supported.includes(nav) ? nav : "en";
+    }
+
+    function applyLanguage(lang){
+      if (!TRANSLATIONS[lang]) lang = "en";
+      currentLang = lang;
+      const dict = TRANSLATIONS[lang];
+      const isRtl = RTL_LANGS.includes(lang);
+
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("dir", isRtl ? "rtl" : "ltr");
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        const value = dict[key];
+        if (value === undefined) return;
+        const attr = el.getAttribute("data-i18n-attr");
+        if (attr) {
+          el.setAttribute(attr, value);
+        } else {
+          el.innerHTML = value;
+        }
+      });
+
+      const label = document.getElementById("langBtnLabel");
+      if (label) label.textContent = lang.toUpperCase();
+
+      document.querySelectorAll("#langMenu button, #langSwitchMobile button").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+
+      // keep chat welcome message in sync only if the user hasn't started chatting yet
+      const welcomeBubble = document.getElementById("chatWelcomeBubble");
+      if (welcomeBubble && !window.__tiseldiChatStarted) {
+        welcomeBubble.textContent = dict["chat.welcome"];
+      }
+    }
+
+    function initLangSwitcher(){
+      const switchEl = document.getElementById("langSwitch");
+      const btn = document.getElementById("langBtn");
+      const menu = document.getElementById("langMenu");
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const open = switchEl.classList.toggle("open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      document.addEventListener("click", () => {
+        switchEl.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      });
+
+      document.querySelectorAll("#langMenu button, #langSwitchMobile button").forEach(b => {
+        b.addEventListener("click", () => {
+          applyLanguage(b.dataset.lang);
+          switchEl.classList.remove("open");
+        });
+      });
+    }
+
+    initLangSwitcher();
+    applyLanguage(detectInitialLang());
+
+    // header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+  // mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const menuClose = document.getElementById('menuClose');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+  menuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // product filters
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.product-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(c => {
+        c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f);
+      });
+    });
+  });
+
+  // contact form -> whatsapp
+  const form = document.getElementById('contactForm');
+  const note = document.getElementById('formNote');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const contact = form.contact.value.trim();
+    const product = form.product.value;
+    const message = form.message.value.trim();
+    const text = `Bonjour Tiseldi, je m'appelle ${name} (${contact}). Je m'intéresse à : ${product}. ${message}`;
+    window.open(`https://wa.me/212707776715?text=${encodeURIComponent(text)}`, '_blank');
+    note.classList.add('show');
+  });
+
+  // ---------- chat widget ----------
+  (function(){
+    const LOGO = "https://tiseldicooperative.github.io/tiseldi-cooperative/LOGO%20TISELDI.jpeg";
+    const WORKER_URL = "https://shrill-block-aca8.tiseldicooperative.workers.dev/";
+
+    const toggle = document.getElementById('chatToggle');
+    const panel = document.getElementById('chatPanel');
+    const messagesEl = document.getElementById('chatMessages');
+    const inputEl = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('chatSend');
+
+    let history = [];
+    let opened = false;
+
+    toggle.addEventListener('click', () => {
+      opened = !opened;
+      toggle.classList.toggle('open', opened);
+      panel.classList.toggle('open', opened);
+      if (opened) inputEl.focus();
+    });
+
+    function addRow(html, cls){
+      const row = document.createElement('div');
+      row.className = 'chat-row ' + cls;
+      row.innerHTML = html;
+      messagesEl.appendChild(row);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      return row;
+    }
+
+    function addBotMessage(text){
+      addRow(`<img src="${LOGO}" alt=""><div class="chat-bubble"></div>`, 'bot')
+        .querySelector('.chat-bubble').textContent = text;
+    }
+    function addUserMessage(text){
+      addRow(`<div class="chat-bubble"></div>`, 'user')
+        .querySelector('.chat-bubble').textContent = text;
+    }
+    function addError(text){
+      addRow(`<div class="chat-bubble"></div>`, 'error')
+        .querySelector('.chat-bubble').textContent = text;
+    }
+
+    function showTyping(){
+      const row = document.createElement('div');
+      row.className = 'chat-typing';
+      row.id = 'chatTyping';
+      row.innerHTML = '<span></span><span></span><span></span>';
+      messagesEl.appendChild(row);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+    function hideTyping(){
+      const t = document.getElementById('chatTyping');
+      if (t) t.remove();
+    }
+
+    async function sendChat(){
+      const text = inputEl.value.trim();
+      if (!text) return;
+      inputEl.value = '';
+      sendBtn.disabled = true;
+
+      window.__tiseldiChatStarted = true;
+      addUserMessage(text);
+      history.push({ role: 'user', content: text });
+      showTyping();
+
+      try {
+        const res = await fetch(WORKER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: history })
+        });
+
+        hideTyping();
+
+        const data = await res.json().catch(() => null);
+
+        if (!res.ok || (data && data.error)) {
+          const msg = data?.error?.message || data?.error || ('Erreur serveur (' + res.status + ')');
+          addError('⚠️ ' + msg);
+          sendBtn.disabled = false;
+          inputEl.focus();
+          return;
+        }
+
+        let reply = data?.choices?.[0]?.message?.content || "Désolé, je n'ai pas de réponse claire, réessayez.";
+        reply = reply.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+        if (!reply) reply = "Désolé, je n'ai pas de réponse claire, réessayez.";
+
+        addBotMessage(reply);
+        history.push({ role: 'assistant', content: reply });
+
+      } catch (err) {
+        hideTyping();
+        addError('⚠️ Erreur de connexion : ' + err.message);
+      }
+
+      sendBtn.disabled = false;
+      inputEl.focus();
+    }
+
+    sendBtn.addEventListener('click', sendChat);
+    inputEl.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendChat(); });
+  })();
+</script>
+</body>
+</html>
